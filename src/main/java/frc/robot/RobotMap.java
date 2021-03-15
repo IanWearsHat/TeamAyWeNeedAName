@@ -3,7 +3,10 @@ package frc.robot;
 public class RobotMap {
 
     public static class DriveTrainMap {
-        //Constants for DriveTrain
+        public static final int rightLeaderCanID = 1;
+        public static final int rightFollowerCanID = 2;
+        public static final int leftLeaderCanID = 3;
+        public static final int leftFollowerCanID = 4;
     }
 
     public static class ElevatorMap {
