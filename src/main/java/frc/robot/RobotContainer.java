@@ -16,7 +16,29 @@ import edu.wpi.first.wpilibj2.command.Command;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
+  private Elevator elevator;
+  private DriveTrain driveTrain;
+  
+  public static final Joystick driverLeft = new Joystick(0);
+  public static final Joystick driverRight = new Joystick(1);
+  public XboxController operator = new XboxController(2);
+  
+  public JoystickButton operatorA = new JoystickButton(operator, 2);
+  public JoystickButton operatorB = new JoystickButton(operator, 3);
+  public JoystickButton operatorX = new JoystickButton(operator, 1);
+  public JoystickButton operatorY = new JoystickButton(operator, 4);
+  public JoystickButton operatorLB = new JoystickButton(operator, 5);
+  public JoystickButton operatorRB = new JoystickButton(operator, 6);
+  public JoystickButton operatorLT = new JoystickButton(operator, 7);
+  public JoystickButton operatorRT = new JoystickButton(operator, 8);
+  public JoystickButton operatorBack = new JoystickButton(operator, 9);
+  public JoystickButton operatorStart = new JoystickButton(operator,10);
+  public JoystickButton operatorTest = new JoystickButton(operator, 9);
+  public JoystickButton operatorStickLeft = new JoystickButton(operator, 11);
+  public JoystickButton operatorStickRight = new JoystickButton(operator, 12);
 
+  public JoystickButton driverRightTrigger = new JoystickButton(driverRight, 1);
+  public JoystickButton driverRightThumb  = new JoystickButton(driverRight, 2);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -32,7 +54,8 @@ public class RobotContainer {
   }
 
   private void configureSubsystems() {
-
+    driveTrain = new DriveTrain();
+    elevator = new Elevator();
   }
   /**
    * Use this method to define your button->command mappings. Buttons can be created by
