@@ -52,4 +52,16 @@ public class DriveTrain extends SubsystemBase {
   public void tankDrive(double left, double right) {
     differentialDrive.tankDrive(left, right);
   }
+
+  public int getLeftEncoderValue() {
+    return (int) leftLeader.getSelectedSensorPosition();
+  }
+
+  public void resetEncoders() {
+    leftLeader.setSelectedSensorPosition(0);
+    leftFollower.setSelectedSensorPosition(0);
+    rightLeader.setSelectedSensorPosition(0);
+    rightFollower.setSelectedSensorPosition(0);
+  }
+
 }
