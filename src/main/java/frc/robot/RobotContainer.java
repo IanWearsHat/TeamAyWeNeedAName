@@ -54,7 +54,7 @@ public class RobotContainer {
 
   
   private void configureDefaultCommands() {
-
+    driveTrain.setDefaultCommand(new Drive(driverLeft, driverRight, driveTrain))
   }
 
   private void configureSubsystems() {
