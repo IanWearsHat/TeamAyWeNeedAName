@@ -10,8 +10,9 @@ public class autoDriveForward extends CommandBase {
     private DriveTrain m_driveTrain;
     boolean isDone = false;
 
-  public autoDriveForward() {
-
+  public autoDriveForward(DriveTrain driveTrain) {
+    m_driveTrain = driveTrain;
+    addRequirements(m_driveTrain);
   }
 
   // Called when the command is initially scheduled.
