@@ -4,20 +4,19 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.InvertType;
-import com.ctre.phoenix.motorcontrol.NeutralMode;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import com.revrobotics.CANEncoder;
+import com.revrobotics.CANSparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap; 
 
 public class Elevator extends SubsystemBase {
   /** Creates a new Elevator. */
-  public WPI_TalonFX leftElevatorMotor;
-  public WPI_TalonFX rightElevatorMotor;
+  public CANSparkMax leftElevatorMotor;
+  public CANSparkMax rightElevatorMotor;
   public Elevator() {
 
-    leftElevatorMotor = new WPI_TalonFX(RobotMap.ElevatorMap.leftElevatorMotorCanID);
-    rightElevatorMotor = new WPI_TalonFX(RobotMap.ElevatorMap.rightElevatorMotorCanID);  
+    leftElevatorMotor = new CANSparkMax(RobotMap.ElevatorMap.leftElevatorMotorCanID, null);
+    rightElevatorMotor = new CANSparkMax(RobotMap.ElevatorMap.rightElevatorMotorCanID, null);
     
   }
 
@@ -25,4 +24,20 @@ public class Elevator extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
+public void leftElevatorMotor(double d, double e) {
 }
+
+public void rightElevatorMotor(double d, double e) {
+}
+public double getEncoder() {
+  return leftElevatorMotor.getEncoder().getPosition(); 
+}
+
+public void setposition(int start) {
+  leftElevatorMotor.getEncoder().setPosition(start);  
+}
+
+}
+
+
