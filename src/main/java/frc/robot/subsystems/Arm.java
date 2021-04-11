@@ -16,29 +16,23 @@ public class Arm extends SubsystemBase {
   public WPI_TalonFX leftFx;
   public WPI_TalonFX rightFx;
   public WPI_TalonFX middleFx;
-  
 
+  public Arm() {
+    leftFx = new WPI_TalonFX(10);
+    rightFx = new WPI_TalonFX(11);
+    middleFx = new WPI_TalonFX(12);
+  }
 
-  public void MoveForwardArm(WPI_TalonFX leftFx) {
-    extracted(leftFx);
-  };
-
-  private void extracted(WPI_TalonFX leftFx) {
-  
-  };
-
-  public void RotateArm(WPI_TalonFX rightFx) {
-    extracted(rightFx);
-  };
-
-  public void StopArm(WPI_TalonFX middleFx) {
+  public void moveForwardArm(WPI_TalonFX leftFx) {
 
   }
 
-  public  void Open(Arm subsystemArm) {}
-  void XboxController (Button Y)
-  {};
-  public void close(Arm subsyteArm){}
-  void XboxController2 (Button X)
-  {}};
+  public void rotateArm(WPI_TalonFX rightFx) {
 
+  }
+
+  public void stopArm(WPI_TalonFX middleFx) {
+
+  }
+  
+}
