@@ -31,17 +31,14 @@ public class ElevatorUp extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    // going up
-    elevator.setLeftElevatorMotor(0.3,0.3); 
-    elevator.setRightElevatorMotor(0.3,0.3);
+    //going up
+    elevator.setElevatorSpeed(0.3,0.3); 
     //when to stop
     if (elevator.getEncoder() >= 1000) {
       //stop the elevator
-      elevator.setLeftElevatorMotor(0,0); 
-      elevator.setRightElevatorMotor(0,0);
+      elevator.setElevatorSpeed(0,0); 
       isDone = true; 
     }
-
 
   }
 

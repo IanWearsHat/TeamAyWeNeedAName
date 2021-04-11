@@ -4,20 +4,18 @@
 
 package frc.robot.subsystems;
 
-import com.revrobotics.CANEncoder;
+
 import com.revrobotics.CANSparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap; 
 
 public class Elevator extends SubsystemBase {
   /** Creates a new Elevator. */
-  public CANSparkMax setLeftElevatorMotor;
-  public CANSparkMax setRightElevatorMotor;
+  public CANSparkMax leftElevatorMotor;
+  public CANSparkMax rightElevatorMotor;
   public Elevator() {
-
-    setLeftElevatorMotor = new CANSparkMax(RobotMap.ElevatorMap.leftElevatorMotorCanID, null);
-    setRightElevatorMotor = new CANSparkMax(RobotMap.ElevatorMap.rightElevatorMotorCanID, null);
-    
+    leftElevatorMotor = new CANSparkMax(RobotMap.ElevatorMap.leftElevatorMotorCanID, null);
+    rightElevatorMotor = new CANSparkMax(RobotMap.ElevatorMap.rightElevatorMotorCanID, null);
   }
 
   @Override
@@ -25,17 +23,26 @@ public class Elevator extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-public void setLeftElevatorMotor(double d, double e) {
+/**
+ * @param leftSpeed set speed for leftElevatorMotor
+ * @param rightSpeed set speed for rightElevatorMotor
+ */
+
+public void setElevatorSpeed(double leftSpeed, double rightSpeed) {
+  leftElevatorMotor.set(leftSpeed);
+  rightElevatorMotor.set(rightSpeed);
 }
 
-public void setRightElevatorMotor(double d, double e) {
-}
 public double getEncoder() {
-  return setLeftElevatorMotor.getEncoder().getPosition(); 
+  return leftElevatorMotor.getEncoder().getPosition(); 
 }
+
+/**
+ * @param start where the elevator motors starting position is
+ */
 
 public void setPosition(int start) {
-  setLeftElevatorMotor.getEncoder().setPosition(start);  
+  leftElevatorMotor.getEncoder().setPosition(start);  
 }
 
 }

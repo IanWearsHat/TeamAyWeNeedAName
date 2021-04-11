@@ -32,13 +32,11 @@ public class ElevatorDown extends CommandBase {
   @Override
   public void execute() {
     // going down
-    elevator.setLeftElevatorMotor(-0.3,-0.3); 
-    elevator.setRightElevatorMotor(-0.3,-0.3);
+    elevator.setElevatorSpeed(-0.3,-0.3); 
     //when to stop
     if (elevator.getEncoder() == 0) {
       //stop the elevator
-      elevator.setLeftElevatorMotor(0,0); 
-      elevator.setRightElevatorMotor(0,0);
+      elevator.setElevatorSpeed(0,0);
       isDone = true; 
     }
   }
