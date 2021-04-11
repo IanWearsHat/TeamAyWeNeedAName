@@ -81,10 +81,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-<<<<<<< HEAD
-    return autoDriveForward;
-=======
     return new AutoDriveForward(driveTrain);
->>>>>>> b85dbd46358a6b7eb03f018161eee1b846d283e6
   }
 }
