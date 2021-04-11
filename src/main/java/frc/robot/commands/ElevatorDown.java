@@ -6,8 +6,6 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.subsystems.Elevator;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
@@ -16,13 +14,10 @@ public class ElevatorDown extends CommandBase {
    * Creates a new ElevatorDown.
    */
   private Elevator elevator; 
-  public XboxController operator = new XboxController(2);
-  private Joystick joystickDown;
   boolean isDone = false; 
 
-  public ElevatorDown(Joystick down, Elevator subsystem) {
+  public ElevatorDown(Elevator subsystem) {
     // Use addRequirements() here to declare subsystem dependencies.
-    joystickDown = down;
 	  elevator = subsystem;
     addRequirements(elevator);
   }
@@ -30,20 +25,20 @@ public class ElevatorDown extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    elevator.setposition(1000); 
+    elevator.setPosition(1000); 
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
     // going down
-    elevator.leftElevatorMotor(-0.3,-0.3); 
-    elevator.rightElevatorMotor(-0.3,-0.3);
+    elevator.setLeftElevatorMotor(-0.3,-0.3); 
+    elevator.setRightElevatorMotor(-0.3,-0.3);
     //when to stop
     if (elevator.getEncoder() == 0) {
       //stop the elevator
-      elevator.leftElevatorMotor(0,0); 
-      elevator.rightElevatorMotor(0,0);
+      elevator.setLeftElevatorMotor(0,0); 
+      elevator.setRightElevatorMotor(0,0);
       isDone = true; 
     }
   }

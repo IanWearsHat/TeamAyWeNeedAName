@@ -11,12 +11,12 @@ import frc.robot.RobotMap;
 
 public class Elevator extends SubsystemBase {
   /** Creates a new Elevator. */
-  public CANSparkMax leftElevatorMotor;
-  public CANSparkMax rightElevatorMotor;
+  public CANSparkMax setLeftElevatorMotor;
+  public CANSparkMax setRightElevatorMotor;
   public Elevator() {
 
-    leftElevatorMotor = new CANSparkMax(RobotMap.ElevatorMap.leftElevatorMotorCanID, null);
-    rightElevatorMotor = new CANSparkMax(RobotMap.ElevatorMap.rightElevatorMotorCanID, null);
+    setLeftElevatorMotor = new CANSparkMax(RobotMap.ElevatorMap.leftElevatorMotorCanID, null);
+    setRightElevatorMotor = new CANSparkMax(RobotMap.ElevatorMap.rightElevatorMotorCanID, null);
     
   }
 
@@ -25,17 +25,17 @@ public class Elevator extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-public void leftElevatorMotor(double d, double e) {
+public void setLeftElevatorMotor(double d, double e) {
 }
 
-public void rightElevatorMotor(double d, double e) {
+public void setRightElevatorMotor(double d, double e) {
 }
 public double getEncoder() {
-  return leftElevatorMotor.getEncoder().getPosition(); 
+  return setLeftElevatorMotor.getEncoder().getPosition(); 
 }
 
-public void setposition(int start) {
-  leftElevatorMotor.getEncoder().setPosition(start);  
+public void setPosition(int start) {
+  setLeftElevatorMotor.getEncoder().setPosition(start);  
 }
 
 }
