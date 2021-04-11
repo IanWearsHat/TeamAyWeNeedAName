@@ -24,8 +24,10 @@ public class Elevator extends SubsystemBase {
   }
 
 /**
- * @param leftSpeed set speed for leftElevatorMotor
- * @param rightSpeed set speed for rightElevatorMotor
+ * Sets the speed of both of the Elevator Motors
+ * 
+ * @param leftSpeed speed for leftElevatorMotor
+ * @param rightSpeed speed for rightElevatorMotor
  */
 
 public void setElevatorSpeed(double leftSpeed, double rightSpeed) {
@@ -38,7 +40,9 @@ public double getEncoder() {
 }
 
 /**
- * @param start where the elevator motors starting position is
+ * Sets the starting position of the motors
+ * 
+ * @param start where the elevator motors' starting position are
  */
 
 public void setPosition(int start) {
