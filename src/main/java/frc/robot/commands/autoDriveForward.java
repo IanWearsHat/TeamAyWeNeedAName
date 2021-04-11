@@ -6,11 +6,11 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
 
-public class autoDriveForward extends CommandBase {
+public class AutoDriveForward extends CommandBase {
     private DriveTrain m_driveTrain;
     boolean isDone = false;
 
-  public autoDriveForward(DriveTrain driveTrain) {
+  public AutoDriveForward(DriveTrain driveTrain) {
     m_driveTrain = driveTrain;
     addRequirements(m_driveTrain);
   }
