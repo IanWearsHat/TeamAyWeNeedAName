@@ -7,7 +7,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-/** Add your docs here. */
+/** create new Arm. */
 public class Arm extends SubsystemBase {
     public WPI_TalonFX leftFx;
     public WPI_TalonFX rightFx;
@@ -18,7 +18,10 @@ public class Arm extends SubsystemBase {
       rightFx = new WPI_TalonFX(11);
       middleFx = new WPI_TalonFX(12);
     }
-
+    /**Set the speed of all motors.
+     * 
+     * @param speed
+     */
     public void setArmSpeed(double speed) {
       leftFx.set(speed);
       rightFx.set(speed);

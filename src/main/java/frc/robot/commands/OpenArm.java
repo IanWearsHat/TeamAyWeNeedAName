@@ -7,7 +7,9 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Arm;
 
 public class OpenArm extends CommandBase{
-  
+  /**
+   * Create new OPenArm.
+  */
   private static final boolean isDone = false;
 
   private Arm m_arm;

@@ -7,7 +7,9 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Arm;
 
 public class CloseArm extends CommandBase {
-  
+  /**
+   * Create new CloseArm.
+   */
   private static final boolean isDone = false;
 
   private Arm m_arm;
