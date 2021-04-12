@@ -13,9 +13,10 @@ import edu.wpi.first.wpilibj.XboxController.Button;
 
 /** Add your docs here. */
 public class Arm extends SubsystemBase {
-  public WPI_TalonFX leftFx;
-  public WPI_TalonFX rightFx;
-  public WPI_TalonFX middleFx;
+  public WPI_TalonFX LeftFx;
+  public WPI_TalonFX RightFx;
+  public WPI_TalonFX MiddleFx;
+  
   
 
 
@@ -40,5 +41,11 @@ public class Arm extends SubsystemBase {
   {};
   public void close(Arm subsyteArm){}
   void XboxController2 (Button X)
-  {}};
+  {}
+
+  public Arm(WPI_TalonFX leftFx, WPI_TalonFX rightFx, WPI_TalonFX middleFx) {
+    LeftFx = leftFx;
+    RightFx = rightFx;
+    MiddleFx = middleFx;
+  }};
 
