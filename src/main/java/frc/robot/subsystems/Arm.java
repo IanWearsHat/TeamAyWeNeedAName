@@ -19,11 +19,10 @@ public class Arm extends SubsystemBase {
       middleFx = new WPI_TalonFX(12);
     }
 
-    public void moveForwardArm(WPI_TalonFX LeftFx) {
-
-    }
-
-    public void rotateArm(WPI_TalonFX RightFx) {
-
+    public void setArmSpeed(double speed) {
+      leftFx.set(speed);
+      rightFx.set(speed);
+      middleFx.set(speed);
     }
   }
+  
