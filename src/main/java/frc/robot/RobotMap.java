@@ -11,6 +11,8 @@ public class RobotMap {
 
     public static class ElevatorMap {
         //Constants for Elevator
+        public static final int leftElevatorMotorCanID = 5; 
+        public static final int rightElevatorMotorCanID = 6; 
     }
 
     public static class ArmMap {
