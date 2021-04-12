@@ -10,7 +10,12 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.Drive;
-import frc.robot.commands.AutoDriveForward;
+import frc.robot.commands.DriveForwardAuto;
+import frc.robot.commands.ElevatorDown;
+import frc.robot.commands.ElevatorUp;
+import frc.robot.commands.OpenArm;
+import frc.robot.commands.CloseArm;
+import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Elevator;
 
@@ -24,6 +29,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private Elevator elevator;
   private DriveTrain driveTrain;
+  private Arm arm;
   
   public static final Joystick driverLeft = new Joystick(0);
   public static final Joystick driverRight = new Joystick(1);
@@ -62,6 +68,7 @@ public class RobotContainer {
   private void configureSubsystems() {
     driveTrain = new DriveTrain();
     elevator = new Elevator();
+    arm = new Arm();
   }
   /**
    * Use this method to define your button->command mappings. Buttons can be created by
@@ -70,10 +77,10 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    operatorA.whenpressed(new ElevatorDown(elevator));
-    operatorB.whenpressed(new ElevatorUp(elevator));
-    operatorX.whenpressed(new ());
-    operatorY.whenpressed(new ());
+    operatorA.whenPressed(new ElevatorDown(elevator));
+    operatorB.whenPressed(new ElevatorUp(elevator));
+    operatorX.whileHeld(new OpenArm(arm));
+    operatorY.whileHeld(new CloseArm(arm));
   }
 
   /**
@@ -83,6 +90,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return new AutoDriveForward(driveTrain);
+    return new DriveForwardAuto(driveTrain);
   }
 }

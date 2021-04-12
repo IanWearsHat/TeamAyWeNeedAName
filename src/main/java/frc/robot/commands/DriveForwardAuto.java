@@ -3,19 +3,22 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
 
-public class AutoDriveForward extends CommandBase {
-    private DriveTrain m_driveTrain;
-    boolean isDone = false;
+public class DriveForwardAuto extends CommandBase {
+  /** Creates a new DriveForwardAuto. */
+  private DriveTrain m_driveTrain;
+  private boolean isDone = false;
 
-  public AutoDriveForward(DriveTrain driveTrain) {
+  public DriveForwardAuto(DriveTrain driveTrain) {
     m_driveTrain = driveTrain;
     addRequirements(m_driveTrain);
+
+    // Use addRequirements() here to declare subsystem dependencies.
   }
 
-  // Called when the command is initially scheduled.
   @Override
   public void initialize() {
       m_driveTrain.resetEncoders();

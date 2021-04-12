@@ -17,6 +17,9 @@ public class RobotMap {
 
     public static class ArmMap {
         //Constants for Arm
+        public static final int leftArmMotorCanID = 7;
+        public static final int rightArmMotorCanID = 8;
+        public static final int middleArmMotorCanID = 9;
     }
 
 }
