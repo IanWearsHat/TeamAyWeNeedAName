@@ -15,7 +15,6 @@ public class DriveForwardAuto extends CommandBase {
   public DriveForwardAuto(DriveTrain driveTrain) {
     m_driveTrain = driveTrain;
     addRequirements(m_driveTrain);
-
     // Use addRequirements() here to declare subsystem dependencies.
   }
 

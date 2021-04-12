@@ -19,9 +19,11 @@ public class Arm extends SubsystemBase {
       rightFx = new WPI_TalonFX(RobotMap.ArmMap.rightArmMotorCanID);
       middleFx = new WPI_TalonFX(RobotMap.ArmMap.middleArmMotorCanID);
     }
-    /**Set the speed of all motors.
+
+    /**
+     * Sets the speed of all 3 of the arm motors.
      * 
-     * @param speed
+     * @param speed the speed of all motors
      */
     public void setArmSpeed(double speed) {
       leftFx.set(speed);

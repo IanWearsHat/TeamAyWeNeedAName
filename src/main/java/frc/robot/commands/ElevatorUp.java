@@ -32,11 +32,11 @@ public class ElevatorUp extends CommandBase {
   @Override
   public void execute() {
     //going up
-    elevator.setElevatorSpeed(0.3,0.3); 
+    elevator.setElevatorSpeed(0.3, 0.3); 
     //when to stop
     if (elevator.getEncoder() >= 1000) {
       //stop the elevator
-      elevator.setElevatorSpeed(0,0); 
+      elevator.setElevatorSpeed(0, 0); 
       isDone = true; 
     }
 
