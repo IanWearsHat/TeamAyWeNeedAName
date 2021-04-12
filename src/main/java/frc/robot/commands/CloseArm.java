@@ -9,48 +9,35 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Arm;
 
 public class CloseArm extends CommandBase {
-
+  
   private static final boolean isDone = false;
 
+  private Arm m_arm;
 
-
-
-  public CloseArm(Arm subsystem) {
-    Arm = subsystem;
+  public CloseArm(Arm arm) {
+    m_arm = arm;
+    addRequirements(m_arm);
   }
-
 
   @Override
   public void initialize() {
-  SetleftFXSpeed(0.5);
-  SetRightFXSpeed(0.5);
-   
+    
   }
-
-  protected void SetRightFXSpeed(double d) {
-  }
-
-  protected void SetleftFXSpeed(double d) {
-  }
-
+  
   @Override
-  public void execute() {}
+  public void execute() {
+    m_arm.setArmSpeed(-0.5);
+  }
 
+  // Called once after isFinished returns true
+  @Override
+  public void end(boolean interrupted) {
+
+  }
+
+  // Make this return true when this Command no longer needs to run execute()
   @Override
   public boolean isFinished() {
     return isDone;
-  
   }
-
-
-  @Override
-  public void end(boolean interrupted) {
-  
-  }
-    
-
-  
-  
-  public void interrupted() {}
-
-  }
+}
