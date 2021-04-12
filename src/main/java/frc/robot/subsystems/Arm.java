@@ -20,19 +20,17 @@ public class Arm extends SubsystemBase {
   
 
 
-  public void MoveForwardArm(WPI_TalonFX leftFx) {
-    extracted(leftFx);
-  };
+  public Arm() {
+    LeftFx = new WPI_TalonFX(10);
+    RightFx = new WPI_TalonFX(11);
+    MiddleFx = new WPI_TalonFX(12);
+  }
 
-  private void extracted(WPI_TalonFX leftFx) {
-  
-  };
+  public void moveForwardArm(WPI_TalonFX LeftFx) {
 
-  public void RotateArm(WPI_TalonFX rightFx) {
-    extracted(rightFx);
-  };
+  }
 
-  public void StopArm(WPI_TalonFX middleFx) {
+  public void rotateArm(WPI_TalonFX RightFx) {
 
   }
 
@@ -47,5 +45,6 @@ public class Arm extends SubsystemBase {
     LeftFx = leftFx;
     RightFx = rightFx;
     MiddleFx = middleFx;
-  }};
+  };
 
+  }
